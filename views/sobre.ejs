@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Espaço Abeliano</title>
+</head>
+<body>
+    
+    <!-- Barra de navegação superior -->
+    <%- include('./partials/navbar.ejs') %>
+
+    <!-- Banner inicial -->
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <h1 class="display-4 fw-bold text-body-emphasis">Prototipação Eficiente de Produtos</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">Utilizamos de manufatura aditiva e subtrativa para agilizar o desenvolvimento
+            de projetos pessoais e comerciais, por meio da utilização de Impressora 3D e Fresadora CNC. 
+          </p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+            <a href="/contato" type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Entre em contato</a>
+            <a href="/catalogo" type="button" class="btn btn-outline-secondary btn-lg px-4">Conheça nosso catálogo</a>
+          </div>
+        </div>
+        <div class="overflow-hidden" style="max-height: 50vh;">
+          <div class="container px-5">
+            <img src="./images/toro.png" class="img-fluid border rounded-4 shadow-lg mb-4" alt="img-1" width="500" height="500" loading="lazy">
+          </div>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div class="container marketing pt-5">
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+          <div class="col-lg-4 text-center mb-5">
+            <img class="rounded-circle" width="140" height="140" src="./images/3dprinter.jpg"></img>
+            <h2 class="fw-normal">Impressão 3D</h2>
+            <p>Manufatura aditiva com uso de impressora 3D para desenvolvimento de action figures, próteses dentárias, peças para engenharia, artesanato e variedades.</p>
+            <p><a class="icon-link" href="#">Faça um orçamento »</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4 text-center mb-5">
+            <img class="rounded-circle" width="140" height="140" src="./images/cnc.jpg"></img>
+            <h2 class="fw-normal">Fresadora CNC</h2>
+            <p>Manufatura subtrativa com uso de fresa CNC para desenvolvimento de peças para engenharia, quadros entalhados em madeira, artesanato e variedades.</p>
+            <p><a class="icon-link" href="#">Faça um orçamento »</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4 text-center mb-5">
+            <img class="rounded-circle" width="140" height="140" src="./images/cad.jpg"></img>
+            <h2 class="fw-normal">Desenho CAD</h2>
+            <p>Dê vida à sua ideia, com uso de tecnologia assistida podemos criar um desenho no computador e dar vida à sua imaginação.</p>
+            <p><a class="icon-link" href="#">Faça um orçamento »</a></p>
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    
+    
+        <!-- START THE FEATURETTES -->
+    
+        <hr class="featurette-divider" style="margin: 5rem 0;">
+    
+        <div class="row featurette">
+          <div class="col-md-7" style="align-self: center;">
+            <h2 class="featurette-heading fw-normal lh-1" style="font-size: 50px;letter-spacing: -.05rem;">Impressão 3D. <span class="text-body-secondary">Inovação em manufatura.</span></h2>
+            <p class="lead">Processo de criação facilitado, produto entregue pronto em apenas algumas horas.</p>
+          </div>
+          <div class="col-md-5">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image mx-auto rounded-4" width="500" height="300" src="./images/3dprinter2.jpg" role="img" aria-label="Placeholder: 500x500" focusable="false" style="max-width: 100%;">
+          </div>
+        </div>
+    
+        <hr class="featurette-divider" style="margin: 5rem 0;">
+    
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2" style="align-self: center;">
+            <h2 class="featurette-heading fw-normal lh-1" style="font-size: 50px;letter-spacing: -.05rem;">Fresa CNC. <span class="text-body-secondary">Robustez e agilidade.</span></h2>
+            <p class="lead">Fresas CNC são mais robustas e criam peças sem fragilidade estrutural.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image mx-auto rounded-4" width="500" height="300" src="./images/cnc2.jpg" role="img" aria-label="Placeholder: 500x500" focusable="false" style="max-width: 100%;">
+          </div>
+        </div>
+    
+        <hr class="featurette-divider" style="margin: 5rem 0;">
+    
+        <div class="row featurette">
+          <div class="col-md-7" style="align-self: center;">
+            <h2 class="featurette-heading fw-normal lh-1" style="font-size: 50px;letter-spacing: -.05rem;">Desenho CAD. <span class="text-body-secondary">Materializar suas ideias.</span></h2>
+            <p class="lead">Por meio do desenho assistido qualquer imaginação vira realidade.</p>
+          </div>
+          <div class="col-md-5">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image mx-auto rounded-4" width="500" height="300" src="./images/cad2.jpg" role="img" aria-label="Placeholder: 500x500" focusable="false" style="max-width: 100%;">
+          </div>
+        </div>
+    
+        <hr class="featurette-divider" style="margin: 5rem 0;">
+    
+        <!-- /END THE FEATURETTES -->
+    
+    </div>
+
+    <!-- Contato -->
+    <div class="container my-5">
+      <div class="p-5 text-center bg-body-secondary rounded-4">
+        <div class="container py-5">
+          <h1 class="text-body-emphasis">Ficou com dúvidas?</h1>
+          <p class="col-lg-8 mx-auto lead my-5">
+            Se gostaria de saber mais, entre em contato e tire todas as suas dúvidas.
+          </p>
+          <a class="btn btn-primary my-5" href="/contato">Contato</a>
+        </div>
+      </div>
+      <hr class="featurette-divider" style="margin: 5rem 0;">
+    </div>
+
+    <!-- Rodapé -->
+    <%- include('./partials/rodape.ejs') %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>    
+</body>
+</html>

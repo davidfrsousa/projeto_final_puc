@@ -1,0 +1,21 @@
+.nav-link {
+  color: #e4f1ff;
+}
+
+.nav-link:hover {
+  color: #aed2ff;
+}
+
+.text-bg-dark {
+  background-color: #27005d !important;
+  color: #e4f1ff;
+}
+
+.float-md-start {
+  color: #e4f1ff;
+}
+
+.filter-light-blue {
+  filter: invert(91%) sepia(7%) saturate(1287%) hue-rotate(187deg)
+    brightness(103%) contrast(103%);
+}
