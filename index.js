@@ -1,7 +1,10 @@
 import express from "express";
+import { MongoClient } from "mongodb";
 
 const app = express();
 const port = 3000;
+const uri = "mongodb://localhost:27017";
+const client = new MongoClient(uri);
 
 app.use(express.static("public"));
 
@@ -18,7 +21,7 @@ app.get("/sobre", (req, res) => {
 });
 
 app.get('/catalogo',(req,res)=>{
-    res.render('catalogo.ejs');
+    catalogo('cnc',req,res).catch(console.dir);
 });
 
 app.get('/contato',(req,res)=>{
@@ -29,14 +32,22 @@ app.get('/servicos',(req,res)=>{
     res.render('servicos.ejs');
 });
 
-app.get('/desenho',(req,res)=>{
-    res.render('desenho.ejs');
-});
+async function catalogo(cat,req,res){
+    try {
+        const client = new MongoClient(uri);
+        const database = client.db('abeliano');
+        const collection = database.collection('products');
 
-app.get('/cnc',(req,res)=>{
-    res.render('cnc.ejs');
-});
+        const cursor = await collection.find();
+        const products = [];
 
-app.get('/impressao',(req,res)=>{
-    res.render('impressao.ejs');
-});
+        for await(const doc of cursor){
+            products.push(doc);
+        }
+
+        console.log(products);
+        res.render('catalogo.ejs',{products: products});
+    }finally{
+        await client.close();
+    }
+}
