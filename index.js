@@ -9,45 +9,66 @@ const client = new MongoClient(uri);
 app.use(express.static("public"));
 
 app.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
+  console.log(`Server listening on port ${port}`);
 });
 
 app.get("/", (req, res) => {
-    res.render("index.ejs");
+  res.render("index.ejs");
 });
 
 app.get("/sobre", (req, res) => {
-    res.render("sobre.ejs");
+  res.render("sobre.ejs");
 });
 
-app.get('/catalogo',(req,res)=>{
-    catalogo('cnc',req,res).catch(console.dir);
+app.get("/catalogo", async (req, res) => {
+  let cat = await catalogo();
+  console.log(cat);
+  res.render('catalogo.ejs',{products:cat});
 });
 
-app.get('/contato',(req,res)=>{
-    res.render('contato.ejs');
+app.get("/produto/:id", async (req, res) => {
+  let id = parseInt(req.params.id);
+  let product = await findProduct(id);
+  console.log(product);
+  res.render("produto.ejs",product);
 });
 
-app.get('/servicos',(req,res)=>{
-    res.render('servicos.ejs');
+app.get("/contato", (req, res) => {
+  res.render("contato.ejs");
 });
 
-async function catalogo(cat,req,res){
-    try {
-        const client = new MongoClient(uri);
-        const database = client.db('abeliano');
-        const collection = database.collection('products');
+app.get("/servicos", (req, res) => {
+  res.render("servicos.ejs");
+});
 
-        const cursor = await collection.find();
-        const products = [];
+async function catalogo() {
+  try {
+    const database = client.db("abeliano");
+    const collection = database.collection("products");
 
-        for await(const doc of cursor){
-            products.push(doc);
-        }
+    const cursor = await collection.find();
+    const products = [];
 
-        console.log(products);
-        res.render('catalogo.ejs',{products: products});
-    }finally{
-        await client.close();
+    for await (const doc of cursor) {
+      products.push(doc);
     }
+
+    return products;
+  } catch(error) {
+    console.log(error);
+  }
+}
+
+async function findProduct(id) {
+  try {
+    const database = client.db("abeliano");
+    const collection = database.collection("products");
+
+    const query = { _id: id};
+
+    const prod = await collection.findOne(query);
+    return prod;
+  } catch(error) {
+    console.log(error);
+  }
 }
