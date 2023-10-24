@@ -25,21 +25,17 @@
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 my-3">
         <% products.forEach(product => { %>
 
-        <div class="col">
-          <div class="card shadow-sm">
+        <div class="col d-flex align-items-strech">
+          <div class="card w-100 shadow-sm">
             <div id="carousel<%=product._id%>" class="carousel slide">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img
-                    src="https://media.istockphoto.com/id/962207378/pt/foto/traditional-ornamental-spanish-decorative-tiles-original-ceramic-tiles-on-the-walls-of-buildings.jpg?s=1024x1024&w=is&k=20&c=JusEqh8f71eOlChP_GeGYBt0-6x6iDtzKgSk7ua_4d8="
-                    class="d-block w-100"
-                    alt="toro"
-                    height="200"
-                  />
+                  <img src="<%=product.imagens[0]%>"" class="d-block w-100"
+                  alt="toro" height="200" />
                 </div>
                 <div class="carousel-item">
                   <img
-                    src="./images/cnc.jpg"
+                    src="<%=product.imagens[1]%>"
                     class="d-block w-100"
                     alt="cnc"
                     height="200"
@@ -47,7 +43,7 @@
                 </div>
                 <div class="carousel-item">
                   <img
-                    src="./images/cad2.jpg"
+                    src="<%=product.imagens[2]%>"
                     class="d-block w-100"
                     alt="cad"
                     height="200"
@@ -80,25 +76,26 @@
               </button>
             </div>
             <div class="card-body">
-              <p class="card-text fs-5"><%=product.descricao%></p>
+              <p class="text-center card-text fs-5"><%=product.nome%></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <a
                     type="button"
-                    class="btn btn-sm btn-outline-secondary"
+                    class="btn btn-sm btn-success"
                     href="./produto/<%=product._id%>"
                   >
                     Acessar
                   </a>
-                  <button
+                  <a
                     type="button"
-                    class="btn btn-sm btn-outline-secondary"
+                    class="btn btn-sm btn-outline-danger"
+                    href="./editar/<%=product._id%>"
                   >
                     Editar
-                  </button>
+                  </a>
                 </div>
-                <small class="text-body-secondary"
-                  ><%=product.categoria%></small
+                <small class="text-body-secondary text-capitalize"
+                  >Categoria: <%=product.categoria%></small
                 >
               </div>
             </div>
