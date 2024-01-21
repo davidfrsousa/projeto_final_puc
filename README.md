@@ -6,7 +6,8 @@ Projeto apresentado como Trabalho Final do curso de Pós-Graduação Desenvolvim
 
 Clone o repositório, navegue até a pasta client e execute o comando abaixo.
 
-`npm install
+`npm install`
+
 `npm run build`
 
 Agora copie a pasta `build` e cole dentro da pasta `server`
