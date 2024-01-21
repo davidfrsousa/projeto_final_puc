@@ -1,0 +1,32 @@
+.card-style {
+  width: "400px";
+  height: "400px";
+  display: flex;
+}
+
+.home-font-color {
+  color: #e4f1ff;
+}
+
+.home-font-anchor {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-light {
+  background-color: #e4f1ff;
+  font-weight: bold;
+  color: #27005d;
+}
+
+.home-bg-color {
+  background-color: #27005d;
+  height: 100vh;
+}
+
+.center-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+}
